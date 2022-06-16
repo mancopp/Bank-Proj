@@ -75,7 +75,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
+    /* padding: 50px; */
 }
 
 header {
@@ -131,7 +131,7 @@ header ul li a.active {
 }
 
 .content {
-    transform: translateX(-100px);
+    transform: translateX(-40px);
     max-width: 600px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
@@ -198,16 +198,17 @@ header ul li a.active {
 }
 
 .sci {
-    position: absolute;
-    right: -25px;
+    transform: translateX(50%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .sci li {
     list-style: none;
 }
+
 .sci li a {
     text-decoration: none;
     width: 60px;
@@ -222,13 +223,16 @@ header ul li a.active {
     margin: 5px 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
 .sci li a img {
     transform: scale(0.6);
     transition: 0.5s;
 }
+
 .sci li:hover a img {
     transform: scale(0.6) rotate(360deg);
 }
+
 .copyrightText {
     padding-top: 10px;
     position: absolute;
