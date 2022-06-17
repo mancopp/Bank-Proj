@@ -18,12 +18,12 @@
 }
 
 :root {
-    --main-bg-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    --main-bg-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     --bg-blur: blur(10px);
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,6 +177,8 @@ header ul li a.active {
 
 .card {
     background-color: #000000;
+    background-size: cover;
+    box-shadow: var(--main-bg-shadow);
     width: 400px;
     aspect-ratio: 856 / 540;
     animation: animate 5s linear infinite;
@@ -239,4 +241,25 @@ header ul li a.active {
     left: 50px;
     bottom: 20px;
     color: rgba(255, 255, 255, 0.76);
+}
+
+.grid {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    max-height: none;
+}
+
+.grid div {
+    flex-basis: 25%;
+    max-width: 20%;
+    background-color: #000000;
+    aspect-ratio: 856 / 540;
+    border-radius: 20px;
+    margin: 30px;
+}
+
+.grid div:hover {
 }
