@@ -6,7 +6,7 @@ window.addEventListener('mousemove', e => {
     curve.style.transform = "translate(" + x + "%, " + y + "%)";
 })
 
-// Main card design showcase
+// Getting cards
 const mainCard = document.querySelector(".card");
 const cardDesigns = [
     "./card_designs/1.jpg",
@@ -17,6 +17,7 @@ const cardDesigns = [
     "./card_designs/6.jpg"
 ];
 
+// Main card design showcase
 let lastIndex = -1;
 const interval = setInterval(() => {
     let i;
@@ -26,3 +27,12 @@ const interval = setInterval(() => {
     mainCard.style.backgroundImage = "url(" + cardDesigns[i] + ")";
     lastIndex = i;
 }, 1000);
+
+//Fill container with cards
+const grid = document.querySelector(".grid");
+cardDesigns.forEach(element => {
+    const div = document.createElement("div");
+    div.className = "grid-design";
+    div.style.backgroundImage = "url(" + element + ")";
+    grid.appendChild(div);
+});

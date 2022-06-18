@@ -183,10 +183,11 @@ header ul li a.active {
     aspect-ratio: 856 / 540;
     animation: animate 5s linear infinite;
     border-radius: 25px;
+    z-index: 1;
 }
 
 .card > img {
-    height: 100%;
+    width: 100%;
 }
 
 @keyframes animate {
@@ -243,6 +244,11 @@ header ul li a.active {
     color: rgba(255, 255, 255, 0.76);
 }
 
+.banks-block {
+    display: flex;
+    flex-direction: column;
+}
+
 .grid {
     height: 100%;
     width: 100%;
@@ -252,7 +258,8 @@ header ul li a.active {
     max-height: none;
 }
 
-.grid div {
+.grid-design {
+    background-size: cover;
     flex-basis: 25%;
     max-width: 20%;
     background-color: #000000;
@@ -261,5 +268,7 @@ header ul li a.active {
     margin: 30px;
 }
 
-.grid div:hover {
+.grid-design:hover {
+    cursor: pointer;
+    opacity: 75%;
 }
