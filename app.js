@@ -48,3 +48,50 @@ if (cardDesigns.length > 0) {
 } else {
     grid.innerText = "No designs for cards were loaded. Please try again later.";
 }
+
+//Change card by upload
+document.querySelectorAll(".file").forEach(inputElement => {
+    const dropArea = inputElement.closest(".drop-area");
+
+    dropArea.addEventListener("click", (e) => {
+        inputElement.click();
+    });
+
+    inputElement.addEventListener("change", (e) => {
+        if (inputElement.files.length) {
+            console.log(inputElement.files)
+            updateCard(inputElement.files[0]);
+        }
+    });
+
+    dropArea.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropArea.classList.add("drop-area__over");
+    });
+
+    ["dragleave", "dragend"].forEach((type) => {
+        dropArea.addEventListener(type, (e) => {
+            dropArea.classList.remove("drop-area__over");
+        });
+    });
+
+    dropArea.addEventListener("drop", (e) => {
+        e.preventDefault();
+        if (e.dataTransfer.files.length == 1) {
+            inputElement.files = e.dataTransfer.files;
+            updateCard(inputElement.files[0])
+        }
+        dropArea.classList.remove("drop-area__over");
+    });
+
+});
+
+function updateCard(fileData) {
+    const displayUpload = document.querySelector(".upload-display");
+    let fileReader = new FileReader();
+
+    fileReader.onload = function (event) {
+        displayUpload.style.backgroundImage = "url(" + event.target.result + ")";
+    }
+    fileReader.readAsDataURL(fileData);
+}

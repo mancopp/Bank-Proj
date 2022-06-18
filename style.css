@@ -287,3 +287,34 @@ header ul li a.active {
 .grid-design:focus {
     border: 5px solid white;
 }
+
+.custom-design {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
+}
+
+.drop-area {
+    width: 50%;
+    height: 100%;
+    border: 8px dashed white;
+    border-radius: 50px;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.drop-area__over {
+    border-style: solid;
+    background-color: #2f073d45;
+}
+
+.file {
+    display: none;
+}
