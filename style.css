@@ -22,6 +22,10 @@
     --bg-blur: blur(10px);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 section {
     min-height: 100vh;
     display: flex;
@@ -158,6 +162,7 @@ header ul li a.active {
     font-size: 1.2em;
     color: rgba(255, 255, 255, 0.76);
 }
+
 .content a {
     display: inline-block;
     padding: 15px 30px;
@@ -249,7 +254,7 @@ header ul li a.active {
     border: 0.5rem solid white;
 }
 
-.banks-block {
+.gallery-block {
     display: flex;
     flex-direction: column;
 }
@@ -274,6 +279,7 @@ header ul li a.active {
 }
 
 .grid-design:hover {
+    border: 5px solid white;
     cursor: pointer;
     opacity: 75%;
 }
