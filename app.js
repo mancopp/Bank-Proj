@@ -19,20 +19,32 @@ const cardDesigns = [
 
 // Main card design showcase
 let lastIndex = -1;
-const interval = setInterval(() => {
-    let i;
-    do {
-        i = Math.floor(Math.random() * (cardDesigns.length)); //Avoiding same picture over two cycles
-    } while (i == lastIndex)
-    mainCard.style.backgroundImage = "url(" + cardDesigns[i] + ")";
-    lastIndex = i;
-}, 1000);
+if (cardDesigns.length > 0) {
+    const interval = setInterval(() => {
+        let i;
+        do {
+            i = Math.floor(Math.random() * (cardDesigns.length)); //Avoiding same picture over two cycles
+        } while (i == lastIndex)
+        mainCard.style.backgroundImage = "url(" + cardDesigns[i] + ")";
+        lastIndex = i;
+    }, 1000);
+}
 
 //Fill container with cards
+//Change card bg
+const displayCard = document.querySelector(".display");
 const grid = document.querySelector(".grid");
-cardDesigns.forEach(element => {
-    const div = document.createElement("div");
-    div.className = "grid-design";
-    div.style.backgroundImage = "url(" + element + ")";
-    grid.appendChild(div);
-});
+if (cardDesigns.length > 0) {
+    cardDesigns.forEach(element => {
+        const div = document.createElement("div");
+        div.className = "grid-design";
+        div.addEventListener("click", function (event) {
+            // this.style.border = "5px solid white";
+            displayCard.style.backgroundImage = this.style.backgroundImage;
+        });
+        div.style.backgroundImage = "url(" + element + ")";
+        grid.appendChild(div);
+    });
+} else {
+    grid.innerText = "No designs for cards were loaded. Please try again later.";
+}

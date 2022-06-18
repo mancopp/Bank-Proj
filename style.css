@@ -244,6 +244,11 @@ header ul li a.active {
     color: rgba(255, 255, 255, 0.76);
 }
 
+.display {
+    box-sizing: content-box;
+    border: 0.5rem solid white;
+}
+
 .banks-block {
     display: flex;
     flex-direction: column;
@@ -271,4 +276,8 @@ header ul li a.active {
 .grid-design:hover {
     cursor: pointer;
     opacity: 75%;
+}
+
+.grid-design:focus {
+    border: 5px solid white;
 }
