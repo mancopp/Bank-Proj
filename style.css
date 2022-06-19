@@ -318,3 +318,27 @@ header ul li a.active {
 .file {
     display: none;
 }
+
+.topBtn {
+    padding: 10px;
+    font-size: 48px;
+    opacity: 20%;
+    box-shadow: var(--main-bg-shadow);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.topBtn:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+.topBtn:active {
+    opacity: 30%;
+}

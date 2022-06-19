@@ -95,3 +95,17 @@ function updateCard(fileData) {
     }
     fileReader.readAsDataURL(fileData);
 }
+
+//Back to top
+const topButton = document.querySelector(".topBtn");
+topButton.addEventListener("click", () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
+window.onscroll = () => {
+    if (document.body.scrollTop > window.innerHeight / 2 || document.documentElement.scrollTop > window.innerHeight / 2) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+}
