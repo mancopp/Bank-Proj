@@ -311,6 +311,21 @@ header ul li a.active {
     padding: 50px;
 }
 
+form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.submit {
+    height: 30px;
+    width: 100px;
+    background-color: #90d5ec85;
+    border: none;
+}
+
 .drop-area {
     width: 50%;
     height: 100%;

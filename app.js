@@ -7,49 +7,29 @@ window.addEventListener('mousemove', e => {
 })
 
 // Getting cards
+const cardsList = document.querySelectorAll(".grid-design");
 const mainCard = document.querySelector(".card");
-const cardDesigns = [
-    "./card_designs/1.jpg",
-    "./card_designs/2.jpg",
-    "./card_designs/3.jpg",
-    "./card_designs/4.jpg",
-    "./card_designs/5.jpg",
-    "./card_designs/6.jpg",
-    "./card_designs/7.png",
-    "./card_designs/8.png"
-];
 
 // Main card design showcase
 let lastIndex = -1;
-if (cardDesigns.length > 0) {
+if (cardsList.length > 0) {
     const interval = setInterval(() => {
         let i;
         do {
-            i = Math.floor(Math.random() * (cardDesigns.length)); //Avoiding same picture over two cycles
+            i = Math.floor(Math.random() * (cardsList.length)); //Avoiding same picture over two cycles
         } while (i == lastIndex)
-        mainCard.style.backgroundImage = "url(" + cardDesigns[i] + ")";
+        mainCard.style.backgroundImage = "url(" + cardsList[i].src + ")";
         lastIndex = i;
     }, 1000);
 }
 
-//Fill container with cards
 //Change card bg
 const displayCard = document.querySelector(".display");
-const grid = document.querySelector(".grid");
-if (cardDesigns.length > 0) {
-    cardDesigns.forEach(element => {
-        const div = document.createElement("div");
-        div.className = "grid-design";
-        div.addEventListener("click", function (event) {
-            // this.style.border = "5px solid white";
-            displayCard.style.backgroundImage = this.style.backgroundImage;
-        });
-        div.style.backgroundImage = "url(" + element + ")";
-        grid.appendChild(div);
+cardsList.forEach(el => {
+    el.addEventListener("click", function (event) {
+        displayCard.style.backgroundImage = "url(" + this.src + ")";
     });
-} else {
-    grid.innerText = "No designs for cards were loaded. Please try again later.";
-}
+});
 
 //Change card by upload
 document.querySelectorAll(".file").forEach(inputElement => {
