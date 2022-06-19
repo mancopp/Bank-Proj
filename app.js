@@ -14,7 +14,9 @@ const cardDesigns = [
     "./card_designs/3.jpg",
     "./card_designs/4.jpg",
     "./card_designs/5.jpg",
-    "./card_designs/6.jpg"
+    "./card_designs/6.jpg",
+    "./card_designs/7.png",
+    "./card_designs/8.png"
 ];
 
 // Main card design showcase
@@ -109,3 +111,4 @@ window.onscroll = () => {
         topButton.style.display = "none";
     }
 }
+
