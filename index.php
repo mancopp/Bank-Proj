@@ -170,19 +170,4 @@ $result = $db->query("SELECT image FROM images ORDER BY id DESC");
     <img class="topBtn" src="./image/arrowhead-up.png" />
     <script src="./app.js"></script>
 </body>
-
-
-<?php
-
-$connection = mysqli_connect('localhost', 'root', '050marian');
-$db = mysqli_select_db($connection, 'card_design');
-
-$query = " SELECT * FROM pictures ";
-$query_run = mysqli_query($connection, $query);
-
-while ($row = mysqli_fetch_array($query_run)) {
-}
-
-?>
-
 </html>
