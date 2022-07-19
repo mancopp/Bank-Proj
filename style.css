@@ -14,13 +14,13 @@
     align-items: center;
     height: 200vh;
     width: 100vw;
-    background: linear-gradient(50deg, #4529ac 0%, #bd1651 74%);
+    background: linear-gradient(50deg, #4529ac 0%, #1650bd 74%);
 }
 
 :root {
     --main-bg-shadow: 0px 0xpx 35px rgba(0, 0, 0, 0.3);
     --bg-blur: blur(10px);
-    --card-color: linear-gradient(50deg, #324dae 0%, #a62e58 74%);
+    --card-color: linear-gradient(50deg, #324dae 0%, #1650bd 74%);
 }
 
 html {
@@ -267,7 +267,7 @@ header ul li a.active {
 
 .display {
     box-sizing: content-box;
-    border: 0.5rem solid white;
+    border: 0.2rem solid white;
 }
 
 .gallery-block {
@@ -295,13 +295,13 @@ header ul li a.active {
 }
 
 .grid-design:hover {
-    border: 5px solid white;
+    border: 4px solid white;
     cursor: pointer;
     opacity: 75%;
 }
 
 .grid-design:focus {
-    border: 5px solid white;
+    border: 4px solid white;
 }
 
 .custom-design {
@@ -314,7 +314,7 @@ header ul li a.active {
 .drop-area {
     width: 50%;
     height: 100%;
-    border: 8px dashed white;
+    border: 4px dashed white;
     border-radius: 50px;
     padding: 80px;
     display: flex;
