@@ -73,20 +73,22 @@ $result = $db->query("SELECT image FROM images ORDER BY id DESC");
             <?php } ?>
         </div>
     </section>
-    <section class="custom-block" id="custom">
+    <!-- <section class="custom-block" id="custom">
         <div class="header">Upload your own picture!</div>
         <div class="container custom-design">
             <div class="card upload-display">
                 <img src="./image/card_data.png" />
             </div>
             <form class="" action="upload.php" method="post" enctype="multipart/form-data">
+                <input type="submit" name="submit" class="submit" value="Upload">
                 <div class="drop-area">
                     <span>Drag and drop your design or click to upload</span>
+                    <div class="test">hello</div>
                     <input type="file" name="image" class="file" accept="image/*" />
                 </div>
                 <input type="submit" name="submit" class="submit" value="Upload">
             </form>
-    </section>
+    </section> -->
     <section class="partners-block" id="partners">
         <div class="header">Banks where you can get our design</div>
         <div class="pricing__grid">
@@ -170,4 +172,19 @@ $result = $db->query("SELECT image FROM images ORDER BY id DESC");
     <img class="topBtn" src="./image/arrowhead-up.png" />
     <script src="./app.js"></script>
 </body>
+
+
+<?php
+
+$connection = mysqli_connect('localhost', 'root', '050marian');
+$db = mysqli_select_db($connection, 'card_design');
+
+$query = " SELECT * FROM pictures ";
+$query_run = mysqli_query($connection, $query);
+
+while ($row = mysqli_fetch_array($query_run)) {
+}
+
+?>
+
 </html>
